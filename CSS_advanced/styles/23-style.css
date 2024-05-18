@@ -1,16 +1,14 @@
+/* Custom properties defined at the root level */
 :root {
-    --text-color: #090909;
+    --text-color: #090909;  
 }
 
-.footer-address {
-    color: var(--text-color);
-}
-
+/* Style for social links */
 .social-link {
     display: block;
 }
 
-/* Style SVG elements within social links */
+/* Style SVG elements within social links, targeting any SVG inside .social-link */
 .social-link svg {
     fill: var(--text-color); /* Apply the text color to the SVG fill */
 }
