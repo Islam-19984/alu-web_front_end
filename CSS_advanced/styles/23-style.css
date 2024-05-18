@@ -10,6 +10,7 @@
     display: block;
 }
 
+/* Style SVG elements within social links */
 .social-link svg {
-    fill: var(--text-color);
+    fill: var(--text-color); /* Apply the text color to the SVG fill */
 }
