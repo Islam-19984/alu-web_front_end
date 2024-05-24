@@ -1,10 +1,6 @@
-/* Generate grid column classes with specified widths */
+/* Generate column classes with different widths */
 @for $i from 1 through 4 {
   .col-#{$i} {
-    @if $i == 1 {
-      width: 100%;
-    } @else {
-      width: 100% / $i;
-    }
+    width: 100% / $i;
   }
 }
