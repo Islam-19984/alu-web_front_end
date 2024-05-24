@@ -1,0 +1,14 @@
+/* Base and extended styles for informational classes */
+.info {
+  font-size: 12px; // Base font size for .info and extended classes
+}
+
+.success {
+  @extend .info;  // Extend .info to include its styles
+  color: #00FF00; // Text color for .success
+}
+
+.warning {
+  @extend .info;  // Extend .info to include its styles
+  color: #FF0000; // Text color for .warning
+}
