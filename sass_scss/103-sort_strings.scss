@@ -1,0 +1,23 @@
+/* Sort a list of names and output the sorted list */
+$list_to_sort: john, anna, zoe, kim, felicia, carrie;
+
+@function sort-list($list) {
+  $sorted: $list;
+  $size: length($sorted);
+  @if $size > 1 {
+    @for $i from $size through 2 {
+      @for $j from 1 through $i - 1 {
+        $current: nth($sorted, $j);
+        $next: nth($sorted, $j + 1);
+        @if $current > $next {
+          $sorted: set-nth($sorted, $j, $next);
+          $sorted: set-nth($sorted, $j + 1, $current);
+        }
+      }
+    }
+  }
+  @return $sorted;
+}
+
+$sorted_list: sort-list($list_to_sort);
+@debug $sorted_list;
