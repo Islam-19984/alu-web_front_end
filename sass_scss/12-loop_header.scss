@@ -1,0 +1,6 @@
+/* Generating h1 to h5 tags with corresponding font sizes using a loop */
+@for $i from 1 through 5 {
+  h#{} {
+    font-size: #{}px;
+  }
+}
