@@ -1,6 +1,6 @@
 /* Generate header tags h1 to h5 with incremental font sizes */
 @for $i from 1 through 5 {
-  h#{} {
-    font-size: #{}px;
+  h#{$i} {
+    font-size: #{$i}px;
   }
 }
