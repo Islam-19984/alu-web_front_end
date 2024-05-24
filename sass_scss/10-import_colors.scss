@@ -1,0 +1,14 @@
+/* Import color variables from 10-colors.scss */
+@import '10-colors';
+
+.red {
+  color: $red; // Use the $red color variable
+}
+
+.green {
+  color: $green; // Use the $green color variable
+}
+
+.blue {
+  color: $blue; // Use the $blue color variable
+}
