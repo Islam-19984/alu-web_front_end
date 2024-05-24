@@ -1,0 +1,8 @@
+/* Setting text color for button tags and hover state */
+button {
+  color: #FF0000; // Text color for button
+
+  &:hover {
+    color: #00FF00; // Text color for button when hovered
+  }
+}

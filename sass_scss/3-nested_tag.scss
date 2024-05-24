@@ -1,0 +1,9 @@
+/* Removes margin and padding from body, adds margin to p tags within body */
+body {
+  margin: 0px;
+  padding: 0px;
+
+  p {
+    margin: 10px;
+  }
+}

@@ -1,0 +1,8 @@
+/* Text color settings for body and first child elements with .red class */
+body {
+  color: #3D3D3D; // Default text color for all elements within body
+
+  > .red {
+    color: #FF0000; // Text color for first child elements with class 'red'
+  }
+}
