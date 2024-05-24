@@ -1,0 +1,13 @@
+/* Mixin to set left and right margins */
+@mixin set-margins($left, $right) {
+  margin-left: $left;
+  margin-right: $right;
+}
+
+body {
+  @include set-margins(10px, 10px); // Applying margins to body
+}
+
+div {
+  @include set-margins(15px, 15px); // Applying margins to div
+}
