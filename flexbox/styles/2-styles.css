@@ -1,0 +1,30 @@
+/* General styles */
+body, html {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.container {
+    width: 100%;
+    margin: auto;
+    padding: 20px;
+}
+
+.row {
+    display: flex;
+}
+
+[class*='col-'] {
+    padding: 15px;
+    border: 1px solid #ccc;
+    flex: 1;
+}
+
+/* Section Latest news ============================= */
+.section-latest-news .row {
+    flex-direction: row-reverse;
+}
+
+/*** 4. CARD ***/
+/* Styles for cards below this line */
