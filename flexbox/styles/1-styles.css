@@ -1,0 +1,25 @@
+/* Specific Section Styles */
+.section-services,
+.section-works,
+.section-about-us,
+.section-latest-news,
+.section-testimonial,
+.section-contact {
+    padding: 50px 0; /* Example of unified padding */
+}
+
+/* Dark theme for specific sections */
+.section-works,
+.section-testimonial {
+    background-color: #333; /* Dark background for contrast */
+    color: #fff;
+}
+
+/* Light theme for other sections */
+.section-services,
+.section-about-us,
+.section-latest-news,
+.section-contact {
+    background-color: #f9f9f9; /* Lighter background for a clean look */
+    color: #333;
+}
