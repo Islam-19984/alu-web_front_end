@@ -1,0 +1,10 @@
+/* Font sizes for h1 tags with responsive design considerations */
+h1 {
+  font-size: 20px; // Default font size for larger screens
+}
+
+@media screen and (max-width: 320px) {
+  h1 {
+    font-size: 14px; // Smaller font size for screens less than 320px wide
+  }
+}
