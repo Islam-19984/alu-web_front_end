@@ -190,8 +190,9 @@
     list-style: none;
     display: flex;
   }
-  
+
   /* Section Latest news ============================= */
+
 .section-latest-news .row {
     flex-direction: row-reverse;
 }
@@ -223,7 +224,7 @@
   /* Navbar
       ============================= */
   
-  .navbar-menu {
+   .navbar-menu {
     float: right;
   }
   
