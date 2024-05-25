@@ -191,8 +191,8 @@
     display: flex;
   }
   
- /* .row::after {
-    content: '';
+  /*.row::after {
+    content: "";
     display: table;
     clear: both;
   }*/
