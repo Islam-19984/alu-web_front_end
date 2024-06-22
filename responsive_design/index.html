@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Form Replication</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <form>
+        <label for="name">Name:</label>
+        <input type="text" id="name" name="name">
+        
+        <label for="email">Email:</label>
+        <input type="email" id="email" name="email">
+        
+        <label for="phone">Phone Number:</label>
+        <input type="tel" id="phone" name="phone">
+        
+        <label for="birthday">Birthday:</label>
+        <input type="date" id="birthday" name="birthday">
+        
+        <label for="favorite-color">Favorite Color:</label>
+        <input type="color" id="favorite-color" name="favorite-color">
+        
+        <label for="contact-method">Preferred Contact Method:</label>
+        <select id="contact-method" name="contact-method">
+            <option value="email">Email</option>
+            <option value="phone">Phone</option>
+        </select>
+        
+        <label>Gender:</label>
+        <input type="radio" id="male" name="gender" value="male">
+        <label for="male">Male</label>
+        <input type="radio" id="female" name="gender" value="female">
+        <label for="female">Female</label>
+        
+        <label for="quantity">Quantity (1-5):</label>
+        <input type="number" id="quantity" name="quantity" min="1" max="5">
+        
+        <label for="cv">CV (upload file):</label>
+        <input type="file" id="cv" name="cv">
+        
+        <label>
+            <input type="checkbox" id="agreement" name="agreement">
+            Agree to the terms and conditions
+        </label>
+        
+        <button type="submit">Submit</button>
+    </form>    
+</body>
+</html>
