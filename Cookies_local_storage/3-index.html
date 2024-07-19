@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cookie Manager with Welcome Message</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+        }
+        .container {
+            width: 300px;
+            margin: 100px auto;
+            text-align: center;
+        }
+        input {
+            display: block;
+            width: 100%;
+            margin: 10px 0;
+            padding: 10px;
+        }
+        button {
+            padding: 10px 20px;
+            margin: 10px;
+        }
+        #cookies-output {
+            margin-top: 20px;
+        }
+        #welcome-message a {
+            font-style: italic;
+            margin-left: 10px;
+            text-decoration: underline;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body onload="showWelcomeMessageOrForm()">
+    <div id="form-container" class="container">
+        <h2>Login Form</h2>
+        <input type="text" id="firstname" placeholder="First Name">
+        <input type="email" id="email" placeholder="Email">
+        <button onclick="setCookies()">Log me in</button>
+    </div>
+    <div id="cookies-output"></div>
+    <script src="dist/bundle.js"></script>
+</body>
+</html>

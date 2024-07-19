@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Advanced Shopping Cart</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+        }
+        .container {
+            width: 300px;
+            margin: 50px auto;
+            text-align: center;
+        }
+        ul {
+            list-style-type: none;
+            padding: 0;
+        }
+        li {
+            margin: 10px 0;
+            padding: 10px;
+            background-color: #f0f0f0;
+            cursor: pointer;
+        }
+        .cart-item {
+            margin: 10px 0;
+            padding: 10px;
+            background-color: #e0e0e0;
+        }
+        .remove {
+            color: red;
+            cursor: pointer;
+        }
+        .clear-cart {
+            margin: 20px 0;
+            padding: 10px;
+            background-color: #ffcccc;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h2>Available products:</h2>
+        <ul id="store-items"></ul>
+        <h2>Your cart:</h2>
+        <div id="cart"></div>
+    </div>
+    <script>
+        const availableItems = ['Shampoo', 'Soap', 'Sponge', 'Water'];
+
+        function checkSessionStorageSupport() {
+            if (typeof(Storage) === "undefined") {
+                alert('Sorry, your browser does not support Web storage. Try again with a better one.');
+                return false;
+            }
+            return true;
+        }
+
+        function getCartFromStorage() {
+            const cart = sessionStorage.getItem('cart');
+            return cart ? JSON.parse(cart) : {};
+        }
+
+        function addItemToCart(item) {
+            const cart = getCartFromStorage();
+            cart[item] = (cart[item] || 0) + 1;
+            sessionStorage.setItem('cart', JSON.stringify(cart));
+            displayCart();
+        }
+
+        function removeItemFromCart(item) {
+            const cart = getCartFromStorage();
+            delete cart[item];
+            sessionStorage.setItem('cart', JSON.stringify(cart));
+            displayCart();
+        }
+
+        function clearCart() {
+            sessionStorage.clear();
+            displayCart();
+        }
+
+        function createStore() {
+            const ul = document.createElement('ul');
+            ul.id = 'store-items';
+            document.querySelector('.container').appendChild(ul);
+
+            availableItems.forEach(item => {
+                const li = document.createElement('li');
+                li.textContent = item;
+                li.onclick = () => addItemToCart(item);
+                ul.appendChild(li);
+            });
+        }
+
+        function displayCart() {
+            const cartDiv = document.getElementById('cart');
+            cartDiv.innerHTML = '';
+
+            const cart = getCartFromStorage();
+            const cartList = document.createElement('ul');
+
+            if (Object.keys(cart).length === 0) {
+                cartList.innerHTML = '<li>Your cart is empty</li>';
+            } else {
+                Object.keys(cart).forEach(item => {
+                    const li = document.createElement('li');
+                    li.className = 'cart-item';
+                    li.innerHTML = `${item} x ${cart[item]} <span class="remove" onclick="removeItemFromCart('${item}')">remove</span>`;
+                    cartList.appendChild(li);
+                });
+            }
+
+            const clearCartButton = document.createElement('div');
+            clearCartButton.className = 'clear-cart';
+            clearCartButton.textContent = 'Clear my cart';
+            clearCartButton.onclick = clearCart;
+
+            cartDiv.appendChild(clearCartButton);
+            cartDiv.appendChild(cartList);
+        }
+
+        document.addEventListener('DOMContentLoaded', () => {
+            if (checkSessionStorageSupport()) {
+                createStore();
+                displayCart();
+            }
+        });
+    </script>
+</body>
+</html>
